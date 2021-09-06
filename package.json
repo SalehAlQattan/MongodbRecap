@@ -5,6 +5,9 @@
   "repository": "https://github.com/SalehAlQattan/MongodbRecap.git",
   "author": "salehalqattan <salehalqattan@outlook.com>",
   "license": "MIT",
+  "engines": {
+    "node": "16.4.2"
+  },
   "scripts": {
     "start": "nodemon app.js"
   },
