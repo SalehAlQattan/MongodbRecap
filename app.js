@@ -10,6 +10,18 @@ const productRoute = require('./API/product/routes');
 app.use(express.json());
 app.use('/products', productRoute);
 
+// Error Handling Middleware
+app.use((error, req, res, next) => {
+  res
+    .status(error.status || 500)
+    .json({ message: error.message || 'Internal Server Error.' });
+});
+
+// path not found
+app.use((req, res, next) => {
+  req.status(404).json({ message: 'Path Not Found.' });
+});
+
 // runnig the app
 const run = async () => {
   // connect to db
