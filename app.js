@@ -10,10 +10,6 @@ const productRoute = require('./API/product/routes');
 app.use(express.json());
 app.use('/products', productRoute);
 
-app.get('/', (req, res) => {
-  res.send('hello');
-});
-
 // runnig the app
 const run = async () => {
   // connect to db
